@@ -1,11 +1,16 @@
 # utl-simplifying-complex-filtering-using-macro-arrays-do-over
-Simplifying complex filtering using macro arrays with do_over macro
     Simplifying complex filtering using macro arrays with do_over macro
 
-      Two solutions
+      Three solutions
 
-            1. Macro array solution
-            2, Custom bulit macro solution (see Patrick profile below)
+            1. Preferred solution by Bart with a comment from Nat
+               Bartosz Jablonski
+               yabwon@gmail.com
+               Nat Wooding
+               <nathani@verizon.net>
+
+            2. Macro array solution
+            3, Custom bulit macro solution (see Patrick profile below)
 
     github
     https://tinyurl.com/ssl38kz
@@ -25,7 +30,6 @@ Simplifying complex filtering using macro arrays with do_over macro
     macros
     https://tinyurl.com/y9nfugth
     https://github.com/rogerjdeangelis/utl-macros-used-in-many-of-rogerjdeangelis-repositories
-
 
     *    _                 _ _  __
      ___(_)_ __ ___  _ __ | (_)/ _|_   _
@@ -145,6 +149,24 @@ Simplifying complex filtering using macro arrays with do_over macro
     / __|/ _ \| | | | | __| |/ _ \| '_ \/ __|
     \__ \ (_) | | |_| | |_| | (_) | | | \__ \
     |___/\___/|_|\__,_|\__|_|\___/|_| |_|___/
+     ____             _
+    | __ )  __ _ _ __| |_
+    |  _ \ / _` | '__| __|
+    | |_) | (_| | |  | |_
+    |____/ \__,_|_|   \__|
+
+    ;
+
+    data want;
+
+      set have;
+      array C code2-code7;
+
+      cars2   = (code1 in (11,17,18) and (7 in C));
+      trucks2 = (code1 in (11,17,18) and (13 in C));
+      pickup2 = (code1 = 749 and (984 in C or 751 in C));
+
+    run;
       __ _ _ __ _ __ __ _ _   _
      / _` | '__| '__/ _` | | | |
     | (_| | |  | | | (_| | |_| |
